@@ -1,12 +1,5 @@
 import com.google.gson.JsonPrimitive
 import com.google.gson.JsonSerializer
-import de.nielsfalk.ktor.swagger.BodySchema
-import de.nielsfalk.ktor.swagger.Metadata
-import de.nielsfalk.ktor.swagger.SwaggerSupport
-import de.nielsfalk.ktor.swagger.version.shared.Contact
-import de.nielsfalk.ktor.swagger.version.shared.Information
-import de.nielsfalk.ktor.swagger.version.v2.Swagger
-import de.nielsfalk.ktor.swagger.version.v3.OpenApi
 import io.ktor.application.Application
 import io.ktor.application.install
 import io.ktor.features.CallLogging
@@ -37,7 +30,7 @@ fun Application.mainModule() {
         }
     }
     install(Locations)
-    install(SwaggerSupport) {
+    /*install(SwaggerSupport) {
         forwardRoot = false
         val information = Information(
             version = "0.1",
@@ -49,7 +42,7 @@ fun Application.mainModule() {
             info = information
             swaggerCustomization
         }
-    }
+    }*/
     routing {
         route("/api") {
             redGreen()
